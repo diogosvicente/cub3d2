@@ -1,26 +1,34 @@
-CC		= cc
-RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror
+SRC = $(wildcard src/*.c)
 
-SRC		= main.c
-NAME	= cub3d
+OBJ = ${SRC:.c=.o}
 
-OBJ		= $(SRC:.c=.o)
+CC = cc
+FLAGS = -g  
+LIBS_LINUX = -I/usr/include -Imlx_linux -Ilibft
+MLX_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+RM = rm -rf
+NAME = dadin
+LFT = libft/libft.a
+.c.o: 
+	${CC} ${FLAGS} ${LIBS_LINUX} -c $< -o ${<:.c=.o}
 
-all: $(NAME)
+${NAME}: ${OBJ} ${LFT} 
+	${CC} ${FLAGS} ${OBJ} ${LFT} ${MLX_LINUX} -o ${NAME}
+$(LFT):
+	make -C libft
+	make -C mlx_linux
+all: ${NAME}
 
-$(NAME): $(OBJ)
-		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+clean: 
+	@make clean -C libft
+	@${RM} ${OBJ}
+fclean : clean
+	@make clean -C mlx_linux
+	@make fclean -C libft
+	@${RM} ${NAME}
+re: fclean all
 
-clean:
-		$(RM) $(OBJ)
+tst:
+	${CC} ${FLAGS} test.c ${LFT} ${MLX_LINUX} -o test
 
-fclean: clean
-		$(RM) $(NAME)
-
-re: fclean $(NAME)
-
-run: all
-	@./$(NAME) maps/1.cub
-
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re 
