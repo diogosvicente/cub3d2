@@ -1,0 +1,25 @@
+Bora la, falta o parser/checagem de parametros para fazer feito 
+
+
+o que precisa ser carregado e levado para projeto. 
+
+
+PATH com NO, SO, WE, EA. feito
+
+Modo 1: Array do tipo t_path criando um lista t_path ou um array de t_img.
+Modo 2: Lista (não prefiro muito "malloc" pra pouco projeto)fazendo uma lista do tipo t_path............ FEITO
+
+t_path precisa conter.... char * path;
+char/int para identificar se é NO, SO , WE ou EA e se possivel sua posição no Array; se esta entre o primeiro ou ultimo 
+para nao mudar na logica de definir o Wall paper. uma variavel da posição do index é indicado; por exemplo t_path[4]; 0 - NO; 1-SO; 2-WE; 3-EA;
+onde a variavel Content vai identificar quem é quem.
+														     T R G B
+é preciso criar a logica de converter decimal to hex; com os numeros passados pelo RGB; ex 255 0 255 precisa virar 0xFFFF00FF; FEITO
+
+precisa verificar se nao tem '\n' entre o mapa e verificar se os mapas são sempre 0 e 1;
+
+precisamos de um char **map ; e corrigir a logica do MAP pra char **; (nao é um bicho 7 cabeças mas vai mudar as funções de map);
+salvar o numero de linhas e de colunas do mapa. 
+substituir o NSWE por 0;
+
+preciso definir qual angulo de visualização inicial com o rotationAngle.
