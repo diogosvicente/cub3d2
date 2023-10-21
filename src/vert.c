@@ -6,11 +6,11 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:55:27 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/04 18:32:50 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:54:10 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cubed.h"
+#include "../cubed.h"
 
 static int	mapdefvert(t_cast *tmp, t_hit *vert, float angle)
 {

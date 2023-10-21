@@ -6,13 +6,13 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 13:32:38 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/03 19:10:45 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:08:10 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cubed.h"
+#include "../cubed.h"
 
-void	clear_buffer(t_all *all)
+void	ceil_floor(t_all *all)
 {
 	int	x;
 	int	y;
@@ -24,14 +24,14 @@ void	clear_buffer(t_all *all)
 		while (++y < WINDOW_HEIGHT)
 		{
 			if (y >= WINDOW_HEIGHT / 2)
-				all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = 0xFF00EE30;
+				all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = all->color_fl;
 			else
-				all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = 0xFFFF0000;
+				all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = all->color_cl;
 		}
 	}
 }
 
-void	start_wall(t_all *all)
+void	start_wall(t_all *all) //TODO: rebuild this part to up the texture tennho 4 structs de cardeais fazer uma função generica pra cada 1. start wall gerencia e chama 1 função passando cada struct como parametro.
 {
 	int	width;
 	int	i;
@@ -54,7 +54,6 @@ void	start_wall(t_all *all)
 			&all->text[i].endian);
 		i++;
 	}
-//	printf("%d\t %d\n", width, height);
 }
 
 static void	render_wall(t_wall *wall, t_all *all, int x)
@@ -63,7 +62,7 @@ static void	render_wall(t_wall *wall, t_all *all, int x)
 	int	color;
 	int	tn;
 
-	tn = all->rays[x].wallhitcontent - 1;
+	tn = all->rays[x].wallhitcontent - 1; //TODO: rebuild, with return based content return by lookup, lookleft number; map.c onde content vai ser de 1 a 4 onde 1-> S, 2 -> N, 3 -> E, 4 -> W (pode estar errado) basico if/else 
 	y = wall->toppixel;
 	if (all->rays[x].washitver)
 		wall->offsetx = (int)all->rays[x].wallhity % TILE_SIZE;
@@ -73,7 +72,7 @@ static void	render_wall(t_wall *wall, t_all *all, int x)
 	{
 		wall->disttop = y + (wall->stripheight / 2) - (WINDOW_HEIGHT / 2);
 		wall->offsety = wall->disttop * ((float)TILE_SIZE / wall->stripheight);
-		color = all->text[tn].wallbuffer[(TILE_SIZE * wall->offsety) + wall->offsetx];
+		color = all->text[tn].wallbuffer[(TILE_SIZE * wall->offsety) + wall->offsetx]; //tn used here // Wallbuffer na posição /\ // deve ser definida
 		all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = color;
 		y++;
 	}

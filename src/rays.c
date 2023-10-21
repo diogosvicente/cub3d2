@@ -6,11 +6,11 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:31:29 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/02 18:35:03 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:54:09 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cubed.h"
+#include "../cubed.h"
 
 static void	buildray(t_all *all, t_hit *ref, int col)
 {

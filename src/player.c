@@ -6,11 +6,47 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:09:03 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/03 16:36:37 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:34:04 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cubed.h"
+#include "../cubed.h"
+
+void	looking_at(char c, t_player *player)
+{
+	if (c == 'N')
+		player->rotationangle = PI * 1.5;
+	if (c == 'S')
+		player->rotationangle = PI * 0.5;
+	if (c == 'W')
+		player->rotationangle = TWO_PI;
+	if (c == 'E')
+		player->rotationangle = TWO_PI * 0.5;
+}
+
+void	start_position(t_all *all, char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (ft_strchr("NSWE", map[i][j]))
+			{
+				looking_at(map[i][j], all->player);
+				map[i][j] = '0';
+				player->px = j + 0.5;
+				player->py = i + 0.5;
+			}
+			j++;
+		}
+		i++;
+	}
+}
 
 void	move_player(t_all *all)
 {
