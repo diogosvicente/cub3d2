@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:40:08 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/04 18:33:23 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:56:21 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 # define TILE_SIZE 64
 
-# define FOV_ANGLE (60 * (PI / 180))
+# define FOV_ANGLE (60 * (PI / 180)) //fix it
 
 # define WINDOW_WIDTH 800
 # define WINDOW_HEIGHT 600
@@ -28,18 +28,9 @@
 # define FALSE 0
 # define TRUE 1
 
-///////// temp /////////
-
-# define MAP_NUM_ROWS 13
-# define MAP_NUM_COLS 20
-
-# include <limits.h>
 # include <stdio.h>
-
-////////////////////////
-
-# include "../libft/libft.h"
-# include "../mlx_linux/mlx.h"
+# include "libft/libft.h"
+# include "mlx_linux/mlx.h"
 # include <fcntl.h>
 # include <math.h>
 
@@ -107,14 +98,19 @@ typedef struct s_img
 {
 	void	*img_ptr;
 	int		*colorbuffer;
-	int		*wallbuffer;
-	char	*path;
 	int		bpp;
 	int		size;
 	int		endian;
-	int		width;
-	int		height;
 }		t_img;
+
+typedef struct s_text
+{
+	int	width;
+	int	height;
+	char	*path;
+	int	*wallbuffer;
+	t_img	setimg;
+}		t_text;
 
 typedef struct s_all
 {
@@ -122,12 +118,25 @@ typedef struct s_all
 	void		*win;
 	int			cols;
 	int			rows;
+	int			color_fl;
+	int			color_cl;
+	char		**map;
 	t_play		player;
 	t_ray		*rays;
-	t_img		img;
-	t_img		text[4];
 	t_cast		cst;
+	t_img		img;
+	t_text		no;
+	t_text		so;
+	t_text		we;
+	t_text		ea;
 }		t_all;
+
+/////////// cubo.c //////////////
+int	render_game(t_all *all);
+
+/////////// parser.c ///////////
+int	check_fd(char *file);
+void	check_cub(char *arg);
 
 /////////// init.c /////////////
 void	init_player(t_play *player);
@@ -157,10 +166,36 @@ float	dist_point(t_play *p, t_hit *ref);
 ///////////// map.c //////////////
 int		mapatvert(float angle);
 int		mapathorz(float angle);
-int		mapwall(float x, float y);
+int		mapwall(float x, float y, t_all *all);
 
 ////////// graphic.c /////////////
-void	clear_buffer(t_all *all);
+void	ceil_floor(t_all *all);
 void	wall_project(t_all *all);
+
+////////// files.c //////////////
+void	check_file(int fd, t_all *all);
+
+///////// check.c /////////////
+int	check_text(char *line, const char *dir, t_text *ref);
+
+///////// maping.c ///////////
+int	start_map(char *line, int start);
+char	**final_map(char *buff_map);
+char	*concat_map(char *line, char *buff);
+
+//////// color.c //////////////
+int	check_color(char *line, const char *dir, t_all *all);
+
+//////// treatmap.c //////////
+int	is_map_okay(t_all *all);
+
+//////// utils.c ////////////
+void	clear_map(char **map);
+void	cleaning(t_all *all);
+int	lentab(char *line, char c);
+
+////// validation.c ////////////
+char	**map_for_validation(char **map, int cols, int rows);
+void	flood(char **map, int y, int x, t_all *all);
 
 #endif

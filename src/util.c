@@ -6,11 +6,11 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:23:19 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/02 18:35:31 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:54:09 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cubed.h"
+#include "../cubed.h"
 
 float	calpoints(float x1, float x2, float y1, float y2)
 {

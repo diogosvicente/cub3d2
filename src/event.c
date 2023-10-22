@@ -6,11 +6,11 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:16 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/03 19:17:50 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:54:33 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cubed.h"
+#include "../cubed.h"
 
 int	keyboard(int keycode, t_all *all)
 {
