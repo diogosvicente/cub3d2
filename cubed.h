@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:40:08 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 20:56:21 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:38:52 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ typedef struct s_text
 	int	height;
 	char	*path;
 	int	*wallbuffer;
-	t_img	setimg;
+	t_img	img;
 }		t_text;
 
 typedef struct s_all
@@ -132,7 +132,7 @@ typedef struct s_all
 }		t_all;
 
 /////////// cubo.c //////////////
-int	render_game(t_all *all);
+void	render_game(t_all *all);
 
 /////////// parser.c ///////////
 int	check_fd(char *file);
@@ -150,6 +150,7 @@ int		key_solta(int keycode, t_all *all);
 
 ////////// player.c ////////////
 void	move_player(t_all *all);
+void	start_position(t_all *all, char **map);
 
 ///////// ray.c ///////////////
 void	castallrays(t_all *all);

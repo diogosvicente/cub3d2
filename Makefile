@@ -3,7 +3,8 @@ SRC = $(wildcard main.c src/*.c parser/*.c)
 OBJ = ${SRC:.c=.o}
 
 CC = cc
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS = -g 
+JIRED = -Wall -Wextra -Werror
 LIBS_LINUX = -I/usr/include -Imlx_linux -Ilibft
 MLX_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM = rm -rf

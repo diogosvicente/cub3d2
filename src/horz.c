@@ -6,15 +6,15 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:39:46 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:54:05 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:41:06 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cubed.h"
 
-static int	mapdefhorz(t_cast *tmp, t_hit *horz, float angle)
+static int	mapdefhorz(t_cast *tmp, t_hit *horz, float angle, t_all *all)
 {
-	if (mapwall(horz->xcheck, horz->ycheck))
+	if (mapwall(horz->xcheck, horz->ycheck, all))
 	{
 		horz->hity = horz->touchy;
 		horz->hitx = horz->touchx;
@@ -46,7 +46,7 @@ static void	insidehorz(t_cast *tmp, t_hit *horz, t_all *all, float angle)
 		horz->ycheck = horz->touchy;
 		if (tmp->lookdown == FALSE)
 			horz->ycheck = horz->touchy - 1;
-		if (mapdefhorz(tmp, horz, angle) == TRUE)
+		if (mapdefhorz(tmp, horz, angle, all) == TRUE)
 			break ;
 	}
 }

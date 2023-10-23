@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:11:36 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 20:55:16 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:31:52 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ int	mapwall(float x, float y, t_all *all)
 		return (TRUE);
 	mapx = floor(x / TILE_SIZE);
 	mapy = floor(y / TILE_SIZE);
-	return (all->map[mapy][mapx] != '0');
+	if (all->map[mapy][mapx] != '0')
+		return (1);
+	return (0);
 }
