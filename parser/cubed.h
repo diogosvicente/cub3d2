@@ -10,6 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// int		turndirection; //-1 for left, +1 for right
+// int		walkdirection; //-1 for back, +1 for front
+
+// int			color_fl; // sai da validação color_fl (cor do chão)
+// int			color_cl; // sai da validação color_cl (cor do ceu)
+// char		**map; // sai da validação mapa valido que pode ser char ** ou int** so que gnl devolve char * || converte ou não 
+
+// t_text		no; //sai da validação no->path
+// t_text		so;	// sai da validaçãi so ->path
+// t_text		we; // || we->path
+// t_text		ea; // || ea->path
+
+// char	*path; //path vai 
+
 #ifndef CUBED_H
 # define CUBED_H
 
@@ -49,8 +63,8 @@ typedef struct s_play
 	float	py;
 	float	width;
 	float	height;
-	int		turndirection; //-1 for left, +1 for right
-	int		walkdirection; //-1 for back, +1 for front
+	int		turndirection;
+	int		walkdirection;
 	float	walkside;
 	float	rotationangle;
 	float	walkspeed;
@@ -114,10 +128,10 @@ typedef struct s_img
 
 typedef struct s_text
 {
-	int	width;
-	int	height;
-	char	*path; //path vai 
-	int	*wallbuffer;
+	int		width;
+	int		height;
+	char	*path;
+	int		*wallbuffer;
 	t_img	setimg;
 }		t_text;
 
@@ -127,17 +141,17 @@ typedef struct s_all
 	void		*win;
 	int			cols;
 	int			rows;
-	int			color_fl; // sai da validação color_fl (cor do chão)
-	int			color_cl; // sai da validação color_cl (cor do ceu)
-	char		**map; // sai da validação mapa valido que pode ser char ** ou int** so que gnl devolve char * || converte ou não 
+	int			color_fl;
+	int			color_cl;
+	char		**map;
 	t_play		player;
 	t_ray		*rays;
 	t_cast		cst;
 	t_img		img;
-	t_text		no; //sai da validação no->path
-	t_text		so;	// sai da validaçãi so ->path
-	t_text		we; // || we->path
-	t_text		ea; // || ea->path
+	t_text		no;
+	t_text		so;
+	t_text		we;
+	t_text		ea;
 }		t_all;
 
 /////////// init.c /////////////
@@ -178,6 +192,6 @@ void	wall_project(t_all *all);
 void	check_file(int fd, t_all *all);
 
 ///////// check.c /////////////
-int	check_text(char *line, const char *dir, t_text *ref);
+int		check_text(char *line, const char *dir, t_text *ref);
 
 #endif

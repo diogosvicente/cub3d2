@@ -38,7 +38,6 @@ int	mapathorz(float angle)
 	return (2);
 }
 
-
 int	mapwall(float x, float y, t_all *all)
 {
 	int	mapx;

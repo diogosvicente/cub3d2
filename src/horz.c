@@ -12,6 +12,17 @@
 
 #include "../cubed.h"
 
+// tmp->horz.content = 0;
+// after line above
+// encontrar a coordenada de Y mais proxima da interseção horizontal
+
+// encontrar a coordenada de X mais proxima da interseção horizontal
+// tmp->intrcptx = all->player.px + (tmp->intrcpty - all->player.py) / ta;
+// calcular o incremento dos proximos X e Y 
+
+// calcular enquanto ta no mapa
+// insidehorz(tmp, &tmp->horz, all, angle);
+
 static int	mapdefhorz(t_cast *tmp, t_hit *horz, float angle, t_all *all)
 {
 	if (mapwall(horz->xcheck, horz->ycheck, all))
@@ -60,13 +71,10 @@ void	horizontal(t_cast *tmp, float angle, t_all *all)
 	tmp->horz.hity = 0;
 	tmp->horz.hitx = 0;
 	tmp->horz.content = 0;
-	// encontrar a coordenada de Y mais proxima da interseção horizontal
 	tmp->intrcpty = floor(all->player.py / TILE_SIZE) * TILE_SIZE;
 	if (tmp->lookdown == TRUE)
 		tmp->intrcpty += TILE_SIZE;
-	// encontrar a coordenada de X mais proxima da interseção horizontal
 	tmp->intrcptx = all->player.px + (tmp->intrcpty - all->player.py) / ta;
-	//calcular o incremento dos proximos X e Y 
 	tmp->ystep = TILE_SIZE;
 	if (tmp->lookdown == FALSE)
 		tmp->ystep *= -1;
@@ -75,6 +83,5 @@ void	horizontal(t_cast *tmp, float angle, t_all *all)
 		tmp->xstep *= -1;
 	if (tmp->lookright == TRUE && tmp->xstep < 0)
 		tmp->xstep *= -1;
-	// calcular enquanto ta no mapa
 	insidehorz(tmp, &tmp->horz, all, angle);
 }

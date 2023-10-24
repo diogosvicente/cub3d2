@@ -78,7 +78,7 @@ int	start_map(char *line, int start)
 	count = 0;
 	if (start == 1)
 		return (1);
-	while(ft_isspace(line[i]))
+	while (ft_isspace(line[i]))
 			i++;
 	if (line[i] == '\0')
 		return (0);

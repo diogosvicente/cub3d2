@@ -45,7 +45,7 @@ void	clear_map(char **map)
 	int	i;
 
 	i = 0;
-	while(map[i])
+	while (map[i])
 		free(map[i++]);
 	free(map);
 }

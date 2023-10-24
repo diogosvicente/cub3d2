@@ -12,6 +12,13 @@
 
 #include "../cubed.h"
 
+// encontrar a coordenada de x mais proxima da intersecao vertical
+// tmp->intrcptx = floor(all->player.px / TILE_SIZE) * TILE_SIZE;
+
+// encontrar a coordenada de y mais proxima da vertical 
+// tmp->intrcpty = all->player.py + (tmp->intrcptx - all->player.px) * ta;
+// calcular incremento de x e y
+
 static int	mapdefvert(t_cast *tmp, t_hit *vert, float angle, t_all *all)
 {
 	if (mapwall(vert->xcheck, vert->ycheck, all))
@@ -60,13 +67,10 @@ void	vertical(t_cast *tmp, float angle, t_all *all)
 	tmp->vert.hity = 0;
 	tmp->vert.hitx = 0;
 	tmp->vert.content = 0;
-	// encontrar a coordenada de x mais proxima da intersecao vertical
 	tmp->intrcptx = floor(all->player.px / TILE_SIZE) * TILE_SIZE;
 	if (tmp->lookright == TRUE)
 		tmp->intrcptx += TILE_SIZE;
-	// encontrar a coordenada de y mais proxima da vertical 
 	tmp->intrcpty = all->player.py + (tmp->intrcptx - all->player.px) * ta;
-	//calcular incremento de x e y
 	tmp->xstep = TILE_SIZE;
 	if (tmp->lookright == FALSE)
 		tmp->xstep *= -1;

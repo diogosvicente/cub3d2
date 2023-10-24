@@ -12,6 +12,21 @@
 
 #include "../cubed.h"
 
+//void	start_wall(t_all *all) TODO: rebuild this part to up the texture
+
+// int	color;
+// int	tn;
+
+// tn = all->rays[x].wallhitcontent;
+		//TODO: rebuild, with return
+		// based content return by lookup, lookleft number; map.c
+// y = wall->toppixel;
+
+// wall->offsety = wall->disttop * 
+			//((float)TILE_SIZE / wall->stripheight);
+// color = all->text[tn].wallbuffer
+			//[(TILE_SIZE * wall->offsety) + wall->offsetx]; tn used here
+
 void	ceil_floor(t_all *all)
 {
 	int	x;
@@ -33,7 +48,7 @@ void	ceil_floor(t_all *all)
 
 void	open_text(t_text *ref, t_all *all)
 {
-	ref->img.img_ptr = mlx_xpm_file_to_image(all->render, 
+	ref->img.img_ptr = mlx_xpm_file_to_image(all->render,
 			ref->path,
 			&ref->width,
 			&ref->height);
@@ -43,7 +58,7 @@ void	open_text(t_text *ref, t_all *all)
 			&ref->img.endian);
 }
 
-void	start_wall(t_all *all) //TODO: rebuild this part to up the texture
+void	start_wall(t_all *all)
 {
 	open_text(&all->no, all);
 	open_text(&all->so, all);
@@ -51,7 +66,7 @@ void	start_wall(t_all *all) //TODO: rebuild this part to up the texture
 	open_text(&all->ea, all);
 }
 
-static int pixel_color(t_wall *wall, t_all *all, int ref)
+static int	pixel_color(t_wall *wall, t_all *all, int ref)
 {
 	int	color;
 	int	y;
@@ -77,9 +92,7 @@ static void	render_wall(t_wall *wall, t_all *all, int x)
 {
 	int	y;
 	int	color;
-	//int	tn;
 
-	//tn = all->rays[x].wallhitcontent; //TODO: rebuild, with return based content return by lookup, lookleft number; map.c
 	y = wall->toppixel;
 	if (all->rays[x].washitver)
 		wall->offsetx = (int)all->rays[x].wallhity % TILE_SIZE;
@@ -89,8 +102,7 @@ static void	render_wall(t_wall *wall, t_all *all, int x)
 	{
 		wall->disttop = y + (wall->stripheight / 2) - (WINDOW_HEIGHT / 2);
 		wall->offsety = wall->disttop * ((float)TILE_SIZE / wall->stripheight);
-		//color = all->text[tn].wallbuffer[(TILE_SIZE * wall->offsety) + wall->offsetx]; //tn used here
-		color = pixel_color(wall, all, all->rays[x].wallhitcontent); 
+		color = pixel_color(wall, all, all->rays[x].wallhitcontent);
 		all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = color;
 		y++;
 	}

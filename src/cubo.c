@@ -12,6 +12,8 @@
 
 #include "../cubed.h"
 
+// wall_project(all);// desenha parede
+
 void	setup(t_all *all)
 {
 	all->rays = malloc(sizeof(t_ray) * NUM_RAYS);
@@ -47,7 +49,7 @@ int	render(void *res)
 			&all->img.endian);
 	update(all);
 	ceil_floor(all);
-	wall_project(all);// desenha parede
+	wall_project(all);
 	mlx_put_image_to_window(all->render, all->win, all->img.img_ptr, 0, 0);
 	mlx_destroy_image(all->render, all->img.img_ptr);
 	return (42);

@@ -12,6 +12,13 @@
 
 #include "../cubed.h"
 
+// vertical(tmp, angle, all); ok !!! aparentemente.
+
+// angle = remainder(angle, TWO_PI);
+// angle = fmod(angle, TWO_PI);
+// printf("%f\n", angle);
+// if (angle < 0)
+
 static void	buildray(t_all *all, t_hit *ref, int col)
 {
 	all->rays[col].wallhitx = ref->hitx;
@@ -28,7 +35,7 @@ static void	castray(float angle, int col, t_all *all)
 	tmp = &all->cst;
 	check_view(tmp, angle);
 	horizontal(tmp, angle, all);
-	vertical(tmp, angle, all); //ok !!! aparentemente.
+	vertical(tmp, angle, all);
 	hdist = dist_point(&all->player, &tmp->horz);
 	vdist = dist_point(&all->player, &tmp->vert);
 	all->rays[col].rayangle = angle;
@@ -49,12 +56,8 @@ static void	castray(float angle, int col, t_all *all)
 static float	normalizeangle(float angle)
 {
 	angle = remainder(angle, TWO_PI);
-	//angle = fmod(angle, TWO_PI);
-	//printf("%f\n", angle);
 	if (angle < 0)
-	{
 		angle = TWO_PI + angle;
-	}
 	return (angle);
 }
 

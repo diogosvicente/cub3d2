@@ -20,8 +20,8 @@ void	flood(char **map, int y, int x, t_all *all)
 	rows = all->rows + 2;
 	cols = all->cols + 2;
 	{
-		if ((x < 0 || y < 0 || x >= cols || y >= rows) 
-				|| (map[y][x] != ' ' && map[y][x] != '0'))
+		if ((x < 0 || y < 0 || x >= cols || y >= rows)
+			|| (map[y][x] != ' ' && map[y][x] != '0'))
 			return ;
 		if (map[y][x] == '0')
 		{
@@ -58,11 +58,11 @@ char	*fix_size(char *line, int size)
 
 char	**map_for_validation(char **map, int cols, int rows)
 {
-	int	i;
+	int		i;
 	char	**aux;
 	char	*space;
-	i = 0;
 
+	i = 0;
 	if (!map)
 		return (NULL);
 	aux = ft_calloc(sizeof(char *), rows + 3);

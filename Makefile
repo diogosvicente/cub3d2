@@ -32,4 +32,7 @@ re: fclean all
 tst: $(LFT)
 	${CC} ${FLAGS} test.c ${LFT} ${MLX_LINUX} -o jorgin
 
+norm:
+	norminette parser/* src/* cubed.h main.c
+
 .PHONY: all clean fclean re 

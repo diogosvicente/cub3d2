@@ -76,7 +76,7 @@ void	rect_map(char **map, t_all *all)
 	char	*aux;
 
 	i = 0;
-	while(map[i])
+	while (map[i])
 	{
 		len = ft_strlen(map[i]);
 		if (len < all->cols)

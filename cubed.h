@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//int		turndirection; -1 for left, +1 for right
+//int		walkdirection; -1 for back, +1 for front
+
 #ifndef CUBED_H
 # define CUBED_H
 
@@ -40,8 +43,8 @@ typedef struct s_play
 	float	py;
 	float	width;
 	float	height;
-	int		turndirection; //-1 for left, +1 for right
-	int		walkdirection; //-1 for back, +1 for front
+	int		turndirection;
+	int		walkdirection;
 	float	walkside;
 	float	rotationangle;
 	float	walkspeed;
@@ -105,10 +108,10 @@ typedef struct s_img
 
 typedef struct s_text
 {
-	int	width;
-	int	height;
+	int		width;
+	int		height;
 	char	*path;
-	int	*wallbuffer;
+	int		*wallbuffer;
 	t_img	img;
 }		t_text;
 
@@ -135,7 +138,7 @@ typedef struct s_all
 void	render_game(t_all *all);
 
 /////////// parser.c ///////////
-int	check_fd(char *file);
+int		check_fd(char *file);
 void	check_cub(char *arg);
 
 /////////// init.c /////////////
@@ -177,23 +180,23 @@ void	wall_project(t_all *all);
 void	check_file(int fd, t_all *all);
 
 ///////// check.c /////////////
-int	check_text(char *line, const char *dir, t_text *ref);
+int		check_text(char *line, const char *dir, t_text *ref);
 
 ///////// maping.c ///////////
-int	start_map(char *line, int start);
+int		start_map(char *line, int start);
 char	**final_map(char *buff_map);
 char	*concat_map(char *line, char *buff);
 
 //////// color.c //////////////
-int	check_color(char *line, const char *dir, t_all *all);
+int		check_color(char *line, const char *dir, t_all *all);
 
 //////// treatmap.c //////////
-int	is_map_okay(t_all *all);
+int		is_map_okay(t_all *all);
 
 //////// utils.c ////////////
 void	clear_map(char **map);
 void	cleaning(t_all *all);
-int	lentab(char *line, char c);
+int		lentab(char *line, char c);
 
 ////// validation.c ////////////
 char	**map_for_validation(char **map, int cols, int rows);

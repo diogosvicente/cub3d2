@@ -12,9 +12,16 @@
 
 #include "../cubed.h"
 
+// int	keyboard(int keycode, t_all *all) {
+// after line above
+// printf("%d\n", keycode);
+
+// else if (keycode == 65307){
+// after line above
+// free_game(all);
+
 int	keyboard(int keycode, t_all *all)
 {
-	//printf("%d\n", keycode);
 	if (keycode == 'w')
 		all->player.walkdirection = 1;
 	else if (keycode == 's')
@@ -34,10 +41,7 @@ int	keyboard(int keycode, t_all *all)
 	else if (keycode == 65363)
 		all->player.turndirection = 1;
 	else if (keycode == 65307)
-	{
-		//free_game(all);
 		exit(42);
-	}
 	return (42);
 }
 
