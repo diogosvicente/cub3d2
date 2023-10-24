@@ -6,15 +6,15 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:55:27 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:54:10 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:48:40 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cubed.h"
 
-static int	mapdefvert(t_cast *tmp, t_hit *vert, float angle)
+static int	mapdefvert(t_cast *tmp, t_hit *vert, float angle, t_all *all)
 {
-	if (mapwall(vert->xcheck, vert->ycheck))
+	if (mapwall(vert->xcheck, vert->ycheck, all))
 	{
 		vert->hity = vert->touchy;
 		vert->hitx = vert->touchx;
@@ -46,7 +46,7 @@ static void	insidevert(t_cast *tmp, t_hit *vert, t_all *all, float angle)
 		vert->xcheck = vert->touchx;
 		if (tmp->lookright == FALSE)
 			vert->xcheck = vert->touchx - 1;
-		if (mapdefvert(tmp, vert, angle) == TRUE)
+		if (mapdefvert(tmp, vert, angle, all) == TRUE)
 			break ;
 	}
 }

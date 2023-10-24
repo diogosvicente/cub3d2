@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:51:56 by kade-sou          #+#    #+#             */
-/*   Updated: 2022/12/01 16:48:00 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:52:26 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char	*line_is_here(char *finals)
 	}
 	while (finals[i] != '\0' && finals[i] != '\n')
 		i++;
-	rec = ft_calloc((i + 2), sizeof(char));
+	rec = ft_calloc((i + 2), sizeof(char *));
 	rec = ft_strccpy(rec, finals, i + 2);
 	if (finals[i] == '\n')
 	{

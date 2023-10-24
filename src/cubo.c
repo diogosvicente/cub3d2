@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:57:42 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/21 12:56:30 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:02:06 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	render(void *res)
 	return (42);
 }
 
-int	render_game(t_all *all)
+void	render_game(t_all *all)
 {
 	all->render = mlx_init();
 	all->win = mlx_new_window(all->render,

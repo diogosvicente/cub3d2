@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 13:32:38 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/21 13:08:10 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:32:10 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,38 +31,55 @@ void	ceil_floor(t_all *all)
 	}
 }
 
-void	start_wall(t_all *all) //TODO: rebuild this part to up the texture tennho 4 structs de cardeais fazer uma função generica pra cada 1. start wall gerencia e chama 1 função passando cada struct como parametro.
+void	open_text(t_text *ref, t_all *all)
 {
-	int	width;
-	int	i;
-	int	height;
-	const char	*path[4] = {"./fig/64.xpm",
-		"./fig/sas.xpm",
-		"./fig/miltank.xpm",
-		"./fig/120.xpm"
-	};
+	ref->img.img_ptr = mlx_xpm_file_to_image(all->render, 
+			ref->path,
+			&ref->width,
+			&ref->height);
+	ref->wallbuffer = (int *)mlx_get_data_addr(ref->img.img_ptr,
+			&ref->img.bpp,
+			&ref->img.size,
+			&ref->img.endian);
+}
 
-	i = 0;
-	while (i < 4)
-	{
-		all->text[i].path = (char *)path[i];
-		all->text[i].img_ptr = mlx_xpm_file_to_image(all->render,
-				 all->text[i].path, &width, &height);
-		all->text[i].wallbuffer = (int *)mlx_get_data_addr(all->text[i].img_ptr,
-			&all->text[i].bpp,
-			&all->text[i].size,
-			&all->text[i].endian);
-		i++;
-	}
+void	start_wall(t_all *all) //TODO: rebuild this part to up the texture
+{
+	open_text(&all->no, all);
+	open_text(&all->so, all);
+	open_text(&all->we, all);
+	open_text(&all->ea, all);
+}
+
+static int pixel_color(t_wall *wall, t_all *all, int ref)
+{
+	int	color;
+	int	y;
+	int	x;
+
+	y = wall->offsety * TILE_SIZE;
+	x = y + wall->offsetx;
+	color = 0;
+	if (ref == 2)
+		color = all->no.wallbuffer[x];
+	else if (ref == 1)
+		color = all->so.wallbuffer[x];
+	else if (ref == 3)
+		color = all->we.wallbuffer[x];
+	else if (ref == 4)
+		color = all->ea.wallbuffer[x];
+	else
+		color = 0xFFFFFFFF;
+	return (color);
 }
 
 static void	render_wall(t_wall *wall, t_all *all, int x)
 {
 	int	y;
 	int	color;
-	int	tn;
+	//int	tn;
 
-	tn = all->rays[x].wallhitcontent - 1; //TODO: rebuild, with return based content return by lookup, lookleft number; map.c onde content vai ser de 1 a 4 onde 1-> S, 2 -> N, 3 -> E, 4 -> W (pode estar errado) basico if/else 
+	//tn = all->rays[x].wallhitcontent; //TODO: rebuild, with return based content return by lookup, lookleft number; map.c
 	y = wall->toppixel;
 	if (all->rays[x].washitver)
 		wall->offsetx = (int)all->rays[x].wallhity % TILE_SIZE;
@@ -72,7 +89,8 @@ static void	render_wall(t_wall *wall, t_all *all, int x)
 	{
 		wall->disttop = y + (wall->stripheight / 2) - (WINDOW_HEIGHT / 2);
 		wall->offsety = wall->disttop * ((float)TILE_SIZE / wall->stripheight);
-		color = all->text[tn].wallbuffer[(TILE_SIZE * wall->offsety) + wall->offsetx]; //tn used here // Wallbuffer na posição /\ // deve ser definida
+		//color = all->text[tn].wallbuffer[(TILE_SIZE * wall->offsety) + wall->offsetx]; //tn used here
+		color = pixel_color(wall, all, all->rays[x].wallhitcontent); 
 		all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = color;
 		y++;
 	}
