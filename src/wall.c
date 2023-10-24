@@ -27,25 +27,6 @@
 // color = all->text[tn].wallbuffer
 			//[(TILE_SIZE * wall->offsety) + wall->offsetx]; tn used here
 
-void	ceil_floor(t_all *all)
-{
-	int	x;
-	int	y;
-
-	x = -1;
-	while (++x < WINDOW_WIDTH)
-	{
-		y = -1;
-		while (++y < WINDOW_HEIGHT)
-		{
-			if (y >= WINDOW_HEIGHT / 2)
-				all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = all->color_fl;
-			else
-				all->img.colorbuffer[(WINDOW_WIDTH * y) + x] = all->color_cl;
-		}
-	}
-}
-
 void	open_text(t_text *ref, t_all *all)
 {
 	ref->img.img_ptr = mlx_xpm_file_to_image(all->render,

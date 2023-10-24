@@ -32,6 +32,9 @@ re: fclean all
 tst: $(LFT)
 	${CC} ${FLAGS} test.c ${LFT} ${MLX_LINUX} -o jorgin
 
+run: $(all)
+	./dadin 1.cub
+
 norm:
 	norminette parser/* src/* cubed.h main.c
 

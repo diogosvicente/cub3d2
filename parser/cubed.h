@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// # define FOV_ANGLE (60 * (PI / 180))
+
 // int		turndirection; //-1 for left, +1 for right
 // int		walkdirection; //-1 for back, +1 for front
 
 // int			color_fl; // sai da validação color_fl (cor do chão)
 // int			color_cl; // sai da validação color_cl (cor do ceu)
-// char		**map; // sai da validação mapa valido que pode ser char ** ou int** so que gnl devolve char * || converte ou não 
+// char		**map; // sai da validação mapa valido que pode ser char
+			//** ou int** so que gnl devolve char * || converte ou não 
 
 // t_text		no; //sai da validação no->path
 // t_text		so;	// sai da validaçãi so ->path
@@ -32,7 +35,7 @@
 
 # define TILE_SIZE 64
 
-# define FOV_ANGLE (60 * (PI / 180))
+# define FOV_ANGLE 1.0471975512
 
 # define WINDOW_WIDTH 800
 # define WINDOW_HEIGHT 600

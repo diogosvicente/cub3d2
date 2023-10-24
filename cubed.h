@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//int		turndirection; -1 for left, +1 for right
-//int		walkdirection; -1 for back, +1 for front
+// int		turndirection; -1 for left, +1 for right
+// int		walkdirection; -1 for back, +1 for front
+// # define FOV_ANGLE (60 * (PI / 180)) //fix it
 
 #ifndef CUBED_H
 # define CUBED_H
@@ -21,7 +22,7 @@
 
 # define TILE_SIZE 64
 
-# define FOV_ANGLE (60 * (PI / 180)) //fix it
+# define FOV_ANGLE 1.0471975512
 
 # define WINDOW_WIDTH 800
 # define WINDOW_HEIGHT 600
