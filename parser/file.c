@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:44:04 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:55:42 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:27:53 by dioda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,19 @@ int	check_line(char *line, t_all *all)
 	return (flag);
 }
 
-void	check_file(int fd, t_all *all)
+static void	clean_check_file(t_all *all, char *res, char *buff_map)
 {
-	int		start;
+	cleaning(all);
+	free(res);
+	free(buff_map);
+}
+
+void	check_file(int fd, t_all *all, int start)
+{
 	char	*res;
 	char	*buff_map;
 
-	start = 0;
+	buff_map = ft_calloc(1, sizeof(char));
 	while (TRUE)
 	{
 		res = get_next_line(fd);
@@ -66,10 +72,9 @@ void	check_file(int fd, t_all *all)
 		if (start == 0)
 		{
 			if (check_line(res, all) == -1)
-			{	
-				cleaning(all);
-				free(res);
-				break ;
+			{
+				clean_check_file(all, res, buff_map);
+				exit(0);
 			}
 		}
 		if (start == 1)

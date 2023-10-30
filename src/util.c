@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:23:19 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:54:09 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:10:43 by dioda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ float	dist_point(t_play *p, t_hit *ref)
 {
 	float	res;
 
-	res = 2147483647;
+	res = 2147483647.0;
 	if (ref->wallhit == TRUE)
 		res = calpoints(p->px, ref->hitx, p->py, ref->hity);
 	return (res);

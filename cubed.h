@@ -178,7 +178,7 @@ void	ceil_floor(t_all *all);
 void	wall_project(t_all *all);
 
 ////////// files.c //////////////
-void	check_file(int fd, t_all *all);
+void	check_file(int fd, t_all *all, int start);
 
 ///////// check.c /////////////
 int		check_text(char *line, const char *dir, t_text *ref);

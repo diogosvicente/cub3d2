@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 13:49:59 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:55:42 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:14:43 by dioda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,7 @@ char	*concat_map(char *line, char *buff)
 	else
 		aux = ft_strdup(line);
 	aux = ft_joinfree(aux, "&");
-	ret = ft_strjoin(buff, aux);
-	if (buff[0])
-		free(buff);
+	ret = ft_joinfree(buff, aux);
 	free(aux);
 	return (ret);
 }
@@ -79,7 +77,7 @@ int	start_map(char *line, int start)
 	if (start == 1)
 		return (1);
 	while (ft_isspace(line[i]))
-			i++;
+		i++;
 	if (line[i] == '\0')
 		return (0);
 	while (line[i])
