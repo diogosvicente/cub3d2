@@ -6,13 +6,11 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:57:42 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/23 19:02:06 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:18:28 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cubed.h"
-
-// wall_project(all);// desenha parede
 
 void	setup(t_all *all)
 {
@@ -23,10 +21,9 @@ void	setup(t_all *all)
 
 void	event(t_all *all)
 {
-	mlx_do_key_autorepeatoff(all->render);
-	mlx_hook(all->win, 02, 1, &keyboard, all);
-	mlx_hook(all->win, 03, 2, &key_solta, all);
-	mlx_hook(all->win, 17, 0, &xclose, all);
+	mlx_hook(all->win, 2, 1L << 0, &keyboard, all);
+	mlx_hook(all->win, 3, 1L << 1, &key_free, all);
+	mlx_hook(all->win, 17, 1L << 2, &xclose, all);
 }
 
 void	update(t_all *all)
@@ -61,7 +58,7 @@ void	render_game(t_all *all)
 	all->win = mlx_new_window(all->render,
 			WINDOW_WIDTH,
 			WINDOW_HEIGHT,
-			"Cubinho");
+			"Cub3d");
 	setup(all);
 	event(all);
 	mlx_loop_hook(all->render, &render, all);

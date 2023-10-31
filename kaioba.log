@@ -1,0 +1,2089 @@
+==9736== Memcheck, a memory error detector
+==9736== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9736== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==9736== Command: ./cub3D map/1.cub
+==9736== Parent PID: 9735
+==9736== 
+==9736== Invalid read of size 1
+==9736==    at 0x405960: ft_strlen (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x405E14: ft_strdup (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x405896: map_for_validation (validation.c:73)
+==9736==    by 0x4053F9: is_map_okay (treatmap.c:103)
+==9736==    by 0x402610: main (main.c:31)
+==9736==  Address 0x4d5cd67 is 0 bytes after a block of size 23 alloc'd
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x405DB3: ft_calloc (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x405872: map_for_validation (validation.c:71)
+==9736==    by 0x4053F9: is_map_okay (treatmap.c:103)
+==9736==    by 0x402610: main (main.c:31)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr1
+   fun:ft_strlen
+   fun:ft_strdup
+   fun:map_for_validation
+   fun:is_map_okay
+   fun:main
+}
+==9736== Invalid read of size 1
+==9736==    at 0x405960: ft_strlen (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x405E14: ft_strdup (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4058F5: map_for_validation (validation.c:79)
+==9736==    by 0x4053F9: is_map_okay (treatmap.c:103)
+==9736==    by 0x402610: main (main.c:31)
+==9736==  Address 0x4d5cd67 is 0 bytes after a block of size 23 alloc'd
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x405DB3: ft_calloc (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x405872: map_for_validation (validation.c:71)
+==9736==    by 0x4053F9: is_map_okay (treatmap.c:103)
+==9736==    by 0x402610: main (main.c:31)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr1
+   fun:ft_strlen
+   fun:ft_strdup
+   fun:map_for_validation
+   fun:is_map_okay
+   fun:main
+}
+==9736== 
+==9736== HEAP SUMMARY:
+==9736==     in use at exit: 302,592 bytes in 1,642 blocks
+==9736==   total heap usage: 164,641 allocs, 162,999 frees, 204,542,308 bytes allocated
+==9736== 
+==9736== 3 bytes in 1 blocks are still reachable in loss record 1 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4B7358E: strdup (strdup.c:42)
+==9736==    by 0x48B5B45: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 8 bytes in 1 blocks are still reachable in loss record 2 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4B7358E: strdup (strdup.c:42)
+==9736==    by 0x48B29AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:XInitExtension
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 8 bytes in 1 blocks are still reachable in loss record 3 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4875B34: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x48779DF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 10 bytes in 1 blocks are still reachable in loss record 4 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4B7358E: strdup (strdup.c:42)
+==9736==    by 0x48B29AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491C213: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B66A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:XInitExtension
+   fun:XkbUseExtension
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 16 bytes in 1 blocks are still reachable in loss record 5 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4D022EE: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D02E6B: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x48C5EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xcb_connect_to_fd
+   fun:xcb_connect_to_display_with_auth_info
+   fun:_XConnectXCB
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 17 bytes in 1 blocks are still reachable in loss record 6 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x405E29: ft_strdup (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40441B: check_text (check.c:79)
+==9736==    by 0x40497F: check_line (file.c:38)
+==9736==    by 0x404B14: check_file (file.c:74)
+==9736==    by 0x402604: main (main.c:30)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:ft_strdup
+   fun:check_text
+   fun:check_line
+   fun:check_file
+   fun:main
+}
+==9736== 18 bytes in 1 blocks are still reachable in loss record 7 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x405E29: ft_strdup (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40441B: check_text (check.c:79)
+==9736==    by 0x4048F1: check_line (file.c:34)
+==9736==    by 0x404B14: check_file (file.c:74)
+==9736==    by 0x402604: main (main.c:30)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:ft_strdup
+   fun:check_text
+   fun:check_line
+   fun:check_file
+   fun:main
+}
+==9736== 18 bytes in 1 blocks are still reachable in loss record 8 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x405E29: ft_strdup (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40441B: check_text (check.c:79)
+==9736==    by 0x404938: check_line (file.c:36)
+==9736==    by 0x404B14: check_file (file.c:74)
+==9736==    by 0x402604: main (main.c:30)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:ft_strdup
+   fun:check_text
+   fun:check_line
+   fun:check_file
+   fun:main
+}
+==9736== 21 bytes in 1 blocks are still reachable in loss record 9 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B603E: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 22 bytes in 1 blocks are still reachable in loss record 10 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x405E29: ft_strdup (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40441B: check_text (check.c:79)
+==9736==    by 0x4049C6: check_line (file.c:40)
+==9736==    by 0x404B14: check_file (file.c:74)
+==9736==    by 0x402604: main (main.c:30)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:ft_strdup
+   fun:check_text
+   fun:check_line
+   fun:check_file
+   fun:main
+}
+==9736== 24 bytes in 1 blocks are still reachable in loss record 11 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4877041: XextCreateExtension (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x48774CC: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XextCreateExtension
+   obj:/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 24 bytes in 1 blocks are still reachable in loss record 12 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4B7358E: strdup (strdup.c:42)
+==9736==    by 0x48B29AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487750A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:XInitExtension
+   fun:XextAddDisplay
+   obj:/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 24 bytes in 1 blocks are still reachable in loss record 13 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48779F5: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 24 bytes in 1 blocks are still reachable in loss record 14 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C3A65: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CC2C6: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CC77E: XSync (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4076C7: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E8B: start_wall (wall.c:47)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:_XReply
+   fun:XSync
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+}
+==9736== 29 bytes in 1 blocks are still reachable in loss record 15 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48AF0CD: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B1929: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406FE2: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XUpdateAtomCache
+   fun:XInternAtom
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 32 bytes in 1 blocks are still reachable in loss record 16 of 83
+==9736==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4D0615E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D06237: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D062EE: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D06364: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x48B652B: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+   fun:xcb_get_extension_data
+   fun:xcb_prefetch_maximum_request_length
+   fun:xcb_get_maximum_request_length
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 32 bytes in 1 blocks are still reachable in loss record 17 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4CFF1B7: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4CFFA08: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4CFFEB0: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D00E44: xcb_wait_for_reply (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D06292: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D062EE: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D06364: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x48B652B: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+   obj:/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+   obj:/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+   fun:xcb_wait_for_reply
+   fun:xcb_get_extension_data
+   fun:xcb_prefetch_maximum_request_length
+   fun:xcb_get_maximum_request_length
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 32 bytes in 1 blocks are still reachable in loss record 18 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48777FF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 32 bytes in 1 blocks are still reachable in loss record 19 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48777FF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487750A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XextAddDisplay
+   obj:/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 33 bytes in 1 blocks are still reachable in loss record 20 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48AF0CD: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B1929: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406FCB: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XUpdateAtomCache
+   fun:XInternAtom
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 40 bytes in 1 blocks are still reachable in loss record 21 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C61F1: _XPollfdCacheInit (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B5E71: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XPollfdCacheInit
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 48 bytes in 1 blocks are still reachable in loss record 22 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C5E71: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B5B68: XOpenDisplay (in /usr/l// int		turndirection; -1 for left, +1 for right
+// int		walkdirection; -1 for back, +1 for front
+// # define FOV_ANGLE (60 * (PI / 180)) //fix it
+
+ib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XConnectXCB
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 48 bytes in 1 blocks are still reachable in loss record 23 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C5E87: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XConnectXCB
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 48 bytes in 1 blocks are still reachable in loss record 24 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x49144C0: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 56 bytes in 1 blocks are still reachable in loss record 25 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x405DB3: ft_calloc (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406226: ft_split (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x404D10: final_map (maping.c:50)
+==9736==    by 0x404B6C: check_file (file.c:84)
+==9736==    by 0x402604: main (main.c:30)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:ft_calloc
+   fun:ft_split
+   fun:final_map
+   fun:check_file
+   fun:main
+}
+==9736== 72 bytes in 1 blocks are still reachable in loss record 26 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B5F20: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 72 bytes in 1 blocks are still reachable in loss record 27 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x49144A4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 88 bytes in 1 blocks are still reachable in loss record 28 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E4F: start_wall (wall.c:44)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 88 bytes in 1 blocks are still reachable in loss record 29 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E63: start_wall (wall.c:45)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 88 bytes in 1 blocks are still reachable in loss record 30 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E77: start_wall (wall.c:46)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 88 bytes in 1 blocks are still reachable in loss record 31 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E8B: start_wall (wall.c:47)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 112 bytes in 1 blocks are still reachable in loss record 32 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C5D72: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XConnectXCB
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 112 bytes in 1 blocks are still reachable in loss record 33 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B6200: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 128 bytes in 1 blocks are still reachable in loss record 34 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B612E: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 128 bytes in 1 blocks are still reachable in loss record 35 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B299E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491C213: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B66A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XInitExtension
+   fun:XkbUseExtension
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 128 bytes in 1 blocks are still reachable in loss record 36 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B299E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XInitExtension
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 128 bytes in 1 blocks are still reachable in loss record 37 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B299E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487750A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XInitExtension
+   fun:XextAddDisplay
+   obj:/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 132 bytes in 6 blocks are still reachable in loss record 38 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x406B39: ft_substr (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406334: ft_split (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x404D10: final_map (maping.c:50)
+==9736==    by 0x404B6C: check_file (file.c:84)
+==9736==    by 0x402604: main (main.c:30)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:ft_substr
+   fun:ft_split
+   fun:final_map
+   fun:check_file
+   fun:main
+}
+==9736== 136 bytes in 1 blocks are still reachable in loss record 39 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x406F1F: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 136 bytes in 1 blocks are still reachable in loss record 40 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E4F: start_wall (wall.c:44)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 136 bytes in 1 blocks are still reachable in loss record 41 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E63: start_wall (wall.c:45)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 136 bytes in 1 blocks are still reachable in loss record 42 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E77: start_wall (wall.c:46)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 136 bytes in 1 blocks are still reachable in loss record 43 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E8B: start_wall (wall.c:47)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 149 bytes in 1 blocks are still reachable in loss record 44 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B6710: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 152 bytes in 1 blocks are still reachable in loss record 45 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x491C40E: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B66A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XkbUseExtension
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 160 bytes in 1 blocks are still reachable in loss record 46 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48A49EF: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B65A4: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XCreateGC
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 160 bytes in 1 blocks are still reachable in loss record 47 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48A49EF: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x40716E: mlx_new_window (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40294C: render_game (cubo.c:58)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:XCreateGC
+   fun:mlx_new_window
+   fun:render_game
+   fun:main
+}
+==9736== 168 bytes in 1 blocks are still reachable in loss record 48 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B60B2: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 208 bytes in 1 blocks are still reachable in loss record 49 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4875AE9: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x48779DF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x406D73: mlx_int_deal_shm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x406FF1: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+   fun:XextAddDisplay
+   fun:XShmQueryVersion
+   fun:mlx_int_deal_shm
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 208 bytes in 1 blocks are still reachable in loss record 50 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CBEC0: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CC205: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x407475: mlx_int_wait_first_expose (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4071AD: mlx_new_window (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40294C: render_game (cubo.c:58)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XEnq
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:_XReadEvents
+   fun:XWindowEvent
+   fun:mlx_int_wait_first_expose
+   fun:mlx_new_window
+   fun:render_game
+   fun:main
+}
+==9736== 256 bytes in 1 blocks are still reachable in loss record 51 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x491955D: XkbAllocClientMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49140DE: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491441E: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49144F4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XkbAllocClientMap
+   fun:_XkbReadGetMapReply
+   fun:XkbGetUpdatedMap
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 344 bytes in 6 blocks are still reachable in loss record 52 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x49138F5: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491441E: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49144F4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XkbReadGetMapReply
+   fun:XkbGetUpdatedMap
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 352 bytes in 4 blocks are indirectly lost in loss record 53 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E8B: start_wall (wall.c:47)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 416 bytes in 2 blocks are still reachable in loss record 54 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CBEC0: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CC1D0: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x407475: mlx_int_wait_first_expose (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4071AD: mlx_new_window (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40294C: render_game (cubo.c:58)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XEnq
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:_XReadEvents
+   fun:XWindowEvent
+   fun:mlx_int_wait_first_expose
+   fun:mlx_new_window
+   fun:render_game
+   fun:main
+}
+==9736== 512 bytes in 1 blocks are still reachable in loss record 55 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B146A: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B184E: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406FCB: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XInternAtom
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 616 bytes in 7 blocks are indirectly lost in loss record 56 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E63: start_wall (wall.c:45)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 704 bytes in 8 blocks are indirectly lost in loss record 57 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E77: start_wall (wall.c:46)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 896 (544 direct, 352 indirect) bytes in 4 blocks are definitely lost in loss record 58 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E8B: start_wall (wall.c:47)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 936 bytes in 1 blocks are still reachable in loss record 59 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4070D0: mlx_new_window (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40294C: render_game (cubo.c:58)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:mlx_new_window
+   fun:render_game
+   fun:main
+}
+==9736== 1,120 bytes in 1 blocks are still reachable in loss record 60 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4919619: XkbAllocClientMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4913EB7: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491441E: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49144F4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XkbAllocClientMap
+   fun:_XkbReadGetMapReply
+   fun:XkbGetUpdatedMap
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 1,456 bytes in 7 blocks are still reachable in loss record 61 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CBF01: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CC1D0: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x407475: mlx_int_wait_first_expose (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4071AD: mlx_new_window (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40294C: render_game (cubo.c:58)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XEnq
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:_XReadEvents
+   fun:XWindowEvent
+   fun:mlx_int_wait_first_expose
+   fun:mlx_new_window
+   fun:render_game
+   fun:main
+}
+==9736== 1,568 (952 direct, 616 indirect) bytes in 7 blocks are definitely lost in loss record 62 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E63: start_wall (wall.c:45)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 1,792 (1,088 direct, 704 indirect) bytes in 8 blocks are definitely lost in loss record 63 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E77: start_wall (wall.c:46)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 1,936 bytes in 22 blocks are indirectly lost in loss record 64 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E4F: start_wall (wall.c:44)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 2,016 bytes in 27 blocks are still reachable in loss record 65 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x49137DD: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491441E: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49144F4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XkbReadGetMapReply
+   fun:XkbGetUpdatedMap
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 2,048 bytes in 1 blocks are still reachable in loss record 66 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4913914: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491441E: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49144F4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XkbReadGetMapReply
+   fun:XkbGetUpdatedMap
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 2,496 bytes in 12 blocks are still reachable in loss record 67 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CBF01: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48CC205: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x407475: mlx_int_wait_first_expose (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4071AD: mlx_new_window (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40294C: render_game (cubo.c:58)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XEnq
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:_XReadEvents
+   fun:XWindowEvent
+   fun:mlx_int_wait_first_expose
+   fun:mlx_new_window
+   fun:render_game
+   fun:main
+}
+==9736== 4,704 bytes in 1 blocks are still reachable in loss record 68 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B5B31: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 4,928 (2,992 direct, 1,936 indirect) bytes in 22 blocks are definitely lost in loss record 69 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E4F: start_wall (wall.c:44)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 7,168 bytes in 1 blocks are still reachable in loss record 70 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x491413E: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x491441E: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49144F4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x4914542: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x49148AF: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x408A07: mlx_int_param_KeyPress (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407335: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XkbReadGetMapReply
+   fun:XkbGetUpdatedMap
+   fun:XkbGetMap
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0
+   fun:XkbKeycodeToKeysym
+   fun:mlx_int_param_KeyPress
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 14,612 bytes in 1 blocks are still reachable in loss record 71 of 83
+==9736==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4D024FB: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D02E6B: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x48C5EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   fun:xcb_connect_to_fd
+   fun:xcb_connect_to_display_with_auth_info
+   fun:_XConnectXCB
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 16,384 bytes in 1 blocks are still reachable in loss record 72 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B5EBE: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 19,200 bytes in 1 blocks are still reachable in loss record 73 of 83
+==9736==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x402725: setup (cubo.c:17)
+==9736==    by 0x402960: render_game (cubo.c:62)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:setup
+   fun:render_game
+   fun:main
+}
+==9736== 21,168 bytes in 1 blocks are still reachable in loss record 74 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4D02204: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x4D02E6B: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==9736==    by 0x48C5EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:xcb_connect_to_fd// int		turndirection; -1 for left, +1 for right
+// int		walkdirection; -1 for back, +1 for front
+// # define FOV_ANGLE (60 * (PI / 180)) //fix it
+
+
+   fun:xcb_connect_to_display_with_auth_info
+   fun:_XConnectXCB
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 22,848 bytes in 168 blocks are indirectly lost in loss record 75 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E4F: start_wall (wall.c:44)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 24,752 bytes in 182 blocks are indirectly lost in loss record 76 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E77: start_wall (wall.c:46)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 24,888 bytes in 183 blocks are indirectly lost in loss record 77 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E63: start_wall (wall.c:45)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 25,296 bytes in 186 blocks are indirectly lost in loss record 78 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==9736==    by 0x407606: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E8B: start_wall (wall.c:47)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   fun:XShmCreateImage
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+}
+==9736== 33,600 bytes in 2 blocks are still reachable in loss record 79 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x48B6290: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==9736==    by 0x406F37: mlx_init (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x402922: render_game (cubo.c:57)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:XOpenDisplay
+   fun:mlx_init
+   fun:render_game
+   fun:main
+}
+==9736== 37,632 (14,784 direct, 22,848 indirect) bytes in 168 blocks are definitely lost in loss record 80 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E4F: start_wall (wall.c:44)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 40,768 (16,016 direct, 24,752 indirect) bytes in 182 blocks are definitely lost in loss record 81 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E77: start_wall (wall.c:46)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 40,992 (16,104 direct, 24,888 indirect) bytes in 183 blocks are definitely lost in loss record 82 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E63: start_wall (wall.c:45)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== 41,664 (16,368 direct, 25,296 indirect) bytes in 186 blocks are definitely lost in loss record 83 of 83
+==9736==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9736==    by 0x4075DB: mlx_int_new_xshm_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x407902: mlx_new_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x4081D7: mlx_int_parse_xpm (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x408611: mlx_xpm_file_to_image (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x403DDF: open_text (wall.c:32)
+==9736==    by 0x403E8B: start_wall (wall.c:47)
+==9736==    by 0x403EBB: wall_project (wall.c:100)
+==9736==    by 0x4028BD: render (cubo.c:49)
+==9736==    by 0x4072DC: mlx_loop (in /nfs/homes/kade-sou/Documents/cube/cub3d2/cub3D)
+==9736==    by 0x40298F: render_game (cubo.c:65)
+==9736==    by 0x40263D: main (main.c:36)
+==9736== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:mlx_int_new_xshm_image
+   fun:mlx_new_image
+   fun:mlx_int_parse_xpm
+   fun:mlx_xpm_file_to_image
+   fun:open_text
+   fun:start_wall
+   fun:wall_project
+   fun:render
+   fun:mlx_loop
+   fun:render_game
+   fun:main
+}
+==9736== LEAK SUMMARY:
+==9736==    definitely lost: 68,848 bytes in 760 blocks
+==9736==    indirectly lost: 101,392 bytes in 760 blocks
+==9736==      possibly lost: 0 bytes in 0 blocks
+==9736==    still reachable: 132,352 bytes in 122 blocks
+==9736==         suppressed: 0 bytes in 0 blocks
+==9736== 
+==9736== For lists of detected and suppressed errors, rerun with: -s
+==9736== ERROR SUMMARY: 10 errors from 10 contexts (suppressed: 1 from 1)

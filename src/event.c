@@ -6,19 +6,11 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:16 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:54:33 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:39:24 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cubed.h"
-
-// int	keyboard(int keycode, t_all *all) {
-// after line above
-// printf("%d\n", keycode);
-
-// else if (keycode == 65307){
-// after line above
-// free_game(all);
 
 int	keyboard(int keycode, t_all *all)
 {
@@ -45,7 +37,7 @@ int	keyboard(int keycode, t_all *all)
 	return (42);
 }
 
-int	key_solta(int keycode, t_all *all)
+int	key_free(int keycode, t_all *all)
 {
 	if (keycode == 'w' || keycode == 's')
 		all->player.walkdirection = 0;
@@ -62,6 +54,20 @@ int	key_solta(int keycode, t_all *all)
 int	xclose(int keycode, t_all *all)
 {
 	(void)keycode;
-	(void)all;
+	cleaning(all);
+	clear_map(all->map);
+	free(all->rays);
+	free(all->render);
+	/*free(all->win);
+	free(all->no.wallbuffer);
+	free(all->no.img.img_ptr);
+	free(all->we.wallbuffer);
+	free(all->we.img.img_ptr);
+	free(all->ea.wallbuffer);
+	free(all->ea.img.img_ptr);
+	free(all->so.wallbuffer);
+	free(all->so.img.img_ptr);
+	free(all->img.colorbuffer);
+	free(all->img.img_ptr);*/
 	exit(42);
 }
