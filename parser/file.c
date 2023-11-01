@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:44:04 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/30 18:27:53 by dioda-si         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:31:50 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_line(char *line, t_all *all)
 		flag = check_color(line, "C", all);
 	else if (only_space(line))
 	{
-		printf("Error\n this line %s\n", line);
+		printf("Error\n this line %s", line);
 		return (-1);
 	}
 	return (flag);

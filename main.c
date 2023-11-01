@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:29:25 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/31 19:38:36 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:05:57 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	main(int argc, char **argv)
 	check_file(fd, &all, 0);
 	if (is_map_okay(&all) == -1)
 	{
+		printf("Error\n\t Map is not okay\n");
 		cleaning(&all);
 		return (42);
 	}
 	render_game(&all);
-	//TODO: falta limpar o game depois da renderização
 	cleaning(&all);
 	clear_map(all.map);
 	free(all.rays);

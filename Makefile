@@ -32,7 +32,7 @@ fclean: clean
 
 re: fclean all
 
-val: all
-	valgrind --leak-check=full --show-reachable=yes --show-leak-kinds=all --error-limit=no --gen-suppressions=all --log-file=kaioba.log ./$(NAME) map/1.cub ; cat kaioba.log
+valgrind: all
+	valgrind --leak-check=full --show-reachable=yes --show-leak-kinds=all --error-limit=no --suppressions=mlx_linux/mlx.supp --gen-suppressions=all --log-file=kaioba.log ./$(NAME) map/1.cub ; cat kaioba.log
 
-.PHONY: all clean fclean re
+PHONY: all clean fclean re

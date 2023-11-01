@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:25:57 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:55:43 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:00:04 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**tab_size(char **map, t_all *all)
 			map[i] = fix_tab(map[i]);
 		if (ft_strchr(map[i], '\t'))
 		{
-			printf("Porra malloc, tem vazamento\n");
+			printf("Error\n Malloc\n");
 			clear_map(map);
 			return (NULL);
 		}
@@ -90,12 +90,41 @@ void	rect_map(char **map, t_all *all)
 	}
 }
 
+int	space_inline(char **map)
+{
+	int		i;
+	int		j;
+	char	*save;
+
+	i = -1;
+	while (map[++i])
+	{
+		save = ft_strtrim(map[i], " \t");
+		j = -1;
+		while (save[++j])
+		{
+			if (ft_strchr(" \t", save[j]))
+			{
+				free(save);
+				return (-1);
+			}
+		}
+		free(save);
+	}
+	return (1);
+}
+
 int	is_map_okay(t_all *all)
 {
 	char	**map2;
 
 	if (!all->map)
 		return (-1);
+	if (space_inline(all->map) == -1)
+	{
+		clear_map(all->map);
+		return (-1);
+	}
 	all->map = tab_size(all->map, all);
 	if (!all->map)
 		return (-1);

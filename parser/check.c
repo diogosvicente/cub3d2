@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 20:41:29 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/31 17:57:27 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:03:40 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ int	check_xpm(char *sav)
 		{
 			printf("Error\n Extension .xpm: %s\n", sav);
 			free(sav);
-			return (-1);			printf("Error\n Path Wrong -> %s\n", sav);
-
+			return (-1);
 		}
 		len++;
 	}

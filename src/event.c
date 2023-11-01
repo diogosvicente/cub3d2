@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:16 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/31 19:39:24 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:04:55 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	keyboard(int keycode, t_all *all)
 	else if (keycode == 65363)
 		all->player.turndirection = 1;
 	else if (keycode == 65307)
-		exit(42);
+		xclose(keycode, all);
 	return (42);
 }
 
@@ -57,17 +57,12 @@ int	xclose(int keycode, t_all *all)
 	cleaning(all);
 	clear_map(all->map);
 	free(all->rays);
+	mlx_destroy_image(all->render, all->no.img.img_ptr);
+	mlx_destroy_image(all->render, all->ea.img.img_ptr);
+	mlx_destroy_image(all->render, all->we.img.img_ptr);
+	mlx_destroy_image(all->render, all->so.img.img_ptr);
+	mlx_clear_window(all->render, all->win);
+	mlx_destroy_window(all->render, all->win);
 	free(all->render);
-	/*free(all->win);
-	free(all->no.wallbuffer);
-	free(all->no.img.img_ptr);
-	free(all->we.wallbuffer);
-	free(all->we.img.img_ptr);
-	free(all->ea.wallbuffer);
-	free(all->ea.img.img_ptr);
-	free(all->so.wallbuffer);
-	free(all->so.img.img_ptr);
-	free(all->img.colorbuffer);
-	free(all->img.img_ptr);*/
 	exit(42);
 }
