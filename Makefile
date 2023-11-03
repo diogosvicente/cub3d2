@@ -3,7 +3,7 @@ SRC = $(wildcard main.c src/*.c parser/*.c)
 OBJ = ${SRC:.c=.o}
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 LIBS_LINUX = -I/usr/include -Imlx_linux -Ilibft
 MLX_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM = rm -rf
@@ -32,4 +32,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+valgrind: all
+	valgrind --leak-check=full --show-reachable=yes --show-leak-kinds=all --error-limit=no --suppressions=mlx_linux/mlx.supp --gen-suppressions=all --log-file=kaioba.log ./$(NAME) map/1.cub ; cat kaioba.log
+
+PHONY: all clean fclean re

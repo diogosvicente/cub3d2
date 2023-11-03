@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 15:10:50 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:55:41 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:25:03 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_col(char *sav)
 	count = 0;
 	while (sav[i])
 	{
-		if (sav[i] == ',')
+		if (sav[i] == ',' || (sav[i] == ',' && ft_isdigit(sav[i + 1])))
 			count++;
 		if (sav[i] != ',' && !ft_isdigit(sav[i]))
 		{

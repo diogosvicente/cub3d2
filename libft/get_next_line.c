@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:51:56 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/14 15:52:26 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:39:26 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ static char	*looking_for_next_line(char *finals)
 	h = 0;
 	while (finals[h] != '\0' && finals[h] != '\n')
 		h++;
-	if (finals[h] == '\0')
+	t = ft_strlen(finals) - h -1;
+	if (finals[h] == '\0' || t == 0)
 	{
 		free(finals);
 		return (NULL);
 	}
-	t = ft_strlen(finals) - h;
-	temp = ft_calloc(t + 1, sizeof(char));
+	h++;
+	temp = ft_calloc(t, sizeof(char));
 	if (!temp)
 	{
 		free(finals);
 		return (NULL);
 	}
 	t = 0;
-	h++;
 	while (finals[h] != '\0')
 		temp[t++] = finals[h++];
 	free(finals);

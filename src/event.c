@@ -6,19 +6,11 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:16 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:54:33 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:04:55 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cubed.h"
-
-// int	keyboard(int keycode, t_all *all) {
-// after line above
-// printf("%d\n", keycode);
-
-// else if (keycode == 65307){
-// after line above
-// free_game(all);
 
 int	keyboard(int keycode, t_all *all)
 {
@@ -41,11 +33,11 @@ int	keyboard(int keycode, t_all *all)
 	else if (keycode == 65363)
 		all->player.turndirection = 1;
 	else if (keycode == 65307)
-		exit(42);
+		xclose(keycode, all);
 	return (42);
 }
 
-int	key_solta(int keycode, t_all *all)
+int	key_free(int keycode, t_all *all)
 {
 	if (keycode == 'w' || keycode == 's')
 		all->player.walkdirection = 0;
@@ -62,6 +54,15 @@ int	key_solta(int keycode, t_all *all)
 int	xclose(int keycode, t_all *all)
 {
 	(void)keycode;
-	(void)all;
+	cleaning(all);
+	clear_map(all->map);
+	free(all->rays);
+	mlx_destroy_image(all->render, all->no.img.img_ptr);
+	mlx_destroy_image(all->render, all->ea.img.img_ptr);
+	mlx_destroy_image(all->render, all->we.img.img_ptr);
+	mlx_destroy_image(all->render, all->so.img.img_ptr);
+	mlx_clear_window(all->render, all->win);
+	mlx_destroy_window(all->render, all->win);
+	free(all->render);
 	exit(42);
 }

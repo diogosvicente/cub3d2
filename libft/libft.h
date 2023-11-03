@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 22:05:14 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/16 14:03:14 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:39:45 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -64,7 +64,7 @@ int		ft_printf(const char *s, ...);
 int		ft_unsignbr(unsigned int n);
 //gnl
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 1
 # endif
 
 char	*ft_strccpy(char *dst, const char *src, size_t dstsize);

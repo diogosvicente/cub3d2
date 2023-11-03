@@ -6,13 +6,9 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:40:08 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/23 18:38:52 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:19:21 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// int		turndirection; -1 for left, +1 for right
-// int		walkdirection; -1 for back, +1 for front
-// # define FOV_ANGLE (60 * (PI / 180)) //fix it
 
 #ifndef CUBED_H
 # define CUBED_H
@@ -150,7 +146,7 @@ void	check_view(t_cast *tmp, float angle);
 ////////////event.c//////////////
 int		xclose(int keycode, t_all *all);
 int		keyboard(int keycode, t_all *all);
-int		key_solta(int keycode, t_all *all);
+int		key_free(int keycode, t_all *all);
 
 ////////// player.c ////////////
 void	move_player(t_all *all);

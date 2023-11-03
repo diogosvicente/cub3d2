@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:40:21 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/30 18:00:52 by dioda-si         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:59:33 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	cleaning(t_all *all)
 	if (all->so.path)
 		free(all->so.path);
 	if (all->ea.path)
-		free(all->we.path);
-	if (all->we.path)
 		free(all->ea.path);
+	if (all->we.path)
+		free(all->we.path);
 }
 
 void	clear_map(char **map)

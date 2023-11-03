@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:41:10 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:55:43 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:00:23 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	flood(char **map, int y, int x, t_all *all)
 			return ;
 		if (map[y][x] == '0')
 		{
-			printf("Error\n mapa aberto ai cria\n");
+			printf("Error\n Map opened\n");
 			clear_map(map);
 			clear_map(all->map);
 			cleaning(all);
@@ -68,7 +68,7 @@ char	**map_for_validation(char **map, int cols, int rows)
 	aux = ft_calloc(sizeof(char *), rows + 3);
 	if (!aux)
 		return (NULL);
-	space = ft_calloc(sizeof(char), cols + 2);
+	space = ft_calloc(sizeof(char *), cols + 2);
 	ft_memset(space, ' ', cols + 2);
 	aux[0] = ft_strdup(space);
 	while (map[i])

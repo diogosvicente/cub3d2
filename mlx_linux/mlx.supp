@@ -1,0 +1,66 @@
+{
+    leak mlx_init
+    Memcheck:Leak
+    ...
+    fun:mlx_init
+}
+{
+    leak mlx_new_window
+    Memcheck:Leak
+    ...
+    fun:mlx_new_window
+}
+{
+    leak mlx_new_image
+    Memcheck:Leak
+    ...
+    fun:mlx_new_image
+}
+{
+    leak mlx_hook
+    Memcheck:Leak
+    ...
+    fun:mlx_hook
+}
+{
+    leak mlx_loop
+    Memcheck:Leak
+    ...
+    fun:mlx_loop
+}
+{
+    leak mlx_loop_hook
+    Memcheck:Leak
+    ...
+    fun:mlx_loop_hook
+}
+{
+    leak mlx_destroy_image
+    Memcheck:Leak
+    ...
+    fun:mlx_destroy_image
+}
+{
+    leak mlx_destroy_window
+    Memcheck:Leak
+    ...
+    fun:mlx_destroy_window
+}
+{
+    leak mlx_get_data_addr
+    Memcheck:Leak
+    ...
+    fun:mlx_get_data_addr
+}
+{
+    leak mlx_put_image_to_window
+    Memcheck:Leak
+    ...
+    fun:mlx_put_image_to_window
+}
+{
+    leak mlx_xpm_file_to_image
+    Memcheck:Leak
+    ...
+    fun:mlx_xpm_file_to_image
+}

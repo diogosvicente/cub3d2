@@ -1,10 +1,10 @@
-NO ./fig/sas.xpm
-EA ./fig/miltank.xpm
-WE ./fig/64.xpm
-SO ./fig/120.xpm
-                  
+NO ./map/fig/sas.xpm
+EA ./map/fig/miltank.xpm
+WE ./map/fig/64.xpm
+SO ./map/fig/120.xpm
+
 F 51,250,51
-C 255,0,0
+C 255,0,2
 
 111111111111111111111
 100000000000000000001
