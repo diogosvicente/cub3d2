@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:57:42 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/11/01 14:47:30 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:52:07 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	event(t_all *all)
 {
 	mlx_hook(all->win, 2, 1L << 0, &keyboard, all);
 	mlx_hook(all->win, 3, 1L << 1, &key_free, all);
-	mlx_hook(all->win, 17, 1L << 2, &xclose, all);
+	mlx_hook(all->win, 17, 1L << 5, &xclose2, all);
 }
 
 void	update(t_all *all)
