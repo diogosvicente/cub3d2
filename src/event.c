@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:16 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/11/01 16:04:55 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:57:55 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,21 @@ int	key_free(int keycode, t_all *all)
 	else if (keycode == 65361 || keycode == 65363)
 		all->player.turndirection = 0;
 	return (42);
+}
+
+int	xclose2(t_all *all)
+{
+	cleaning(all);
+	clear_map(all->map);
+	free(all->rays);
+	mlx_destroy_image(all->render, all->no.img.img_ptr);
+	mlx_destroy_image(all->render, all->ea.img.img_ptr);
+	mlx_destroy_image(all->render, all->we.img.img_ptr);
+	mlx_destroy_image(all->render, all->so.img.img_ptr);
+	mlx_clear_window(all->render, all->win);
+	mlx_destroy_window(all->render, all->win);
+	free(all->render);
+	exit(42);
 }
 
 int	xclose(int keycode, t_all *all)

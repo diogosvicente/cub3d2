@@ -6,7 +6,7 @@
 /*   By: kade-sou <kade-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:40:08 by kade-sou          #+#    #+#             */
-/*   Updated: 2023/10/31 19:19:21 by kade-sou         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:58:17 by kade-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ void	check_view(t_cast *tmp, float angle);
 
 ////////////event.c//////////////
 int		xclose(int keycode, t_all *all);
+int		xclose2(t_all *all);
 int		keyboard(int keycode, t_all *all);
 int		key_free(int keycode, t_all *all);
 
